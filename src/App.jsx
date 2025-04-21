@@ -1,61 +1,14 @@
-// import { useState, useEffect } from 'react'
-// import Products from './components/Products'
-// import Cart from './components/Cart'
-
-// function App() {
-//   const [data, setData] = useState([])
-//   const [cart, setCart] = useState([])
-
-//   const addToCart = (id) => {
-//     let newCart = (...cart).push.id
-//     setCart(newCart)
-//     console.log(cart)
-//   }
-
-//   const getData = () => {
-//     fetch('data.json', {
-//       headers: {
-//         'Content-Type': 'application/json',
-//         Accept: 'application/json',
-//       },
-//     })
-//       .then((response) => {
-//         return response.json()
-//       })
-//       .then((myJson) => {
-//         setData(myJson)
-//       })
-//   }
-//   useEffect(() => {
-//     getData()
-//   }, [])
-
-//   return (
-//     <>
-//       <h1 className="text-2xl">Desserts</h1>
-//       <Products addToCart={addToCart} data={data} />
-//       <hr />
-//       <Cart />
-//       <div className="attribution">
-//         Challenge by{' '}
-//         <a href="https://www.frontendmentor.io?ref=challenge">
-//           Frontend Mentor
-//         </a>
-//         . Coded by <a href="#">Dirk van Krieken</a>.
-//       </div>
-//     </>
-//   )
-// }
-
-// export default App
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Cart from './components/Cart'
-import Products from './components/Products'
+import Product from './components/Product'
+import OrderConfirmation from './components/OrderConfirmation'
 
 function App() {
   const [data, setData] = useState([])
   const [cart, updateCart] = useState([])
+  const [overlay, setOverlay] = useState(false)
+  let showOverlay
   const getData = () => {
     fetch('data.json', {
       headers: {
@@ -73,18 +26,40 @@ function App() {
   useEffect(() => {
     getData()
   }, [])
+  if (overlay) {
+    showOverlay = <OrderConfirmation cart={cart} />
+  }
   return (
     <>
-      <h1 className="text-2xl">Desserts</h1>
-      <Products cart={cart} updateCart={updateCart} data={data} />
-      <Cart cart={cart} />
-      <div className="attribution">
-        Challenge by{' '}
-        <a href="https://www.frontendmentor.io?ref=challenge">
-          Frontend Mentor
-        </a>
-        . Coded by <a href="#">Dirk van Krieken</a>.
-      </div>
+      <main className="p-5 max-w-300 mx-auto">
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <div>
+            <h1 className="text-4xl font-bold pb-10 md:pb-5">Desserts</h1>
+            <div className="grid md:grid-cols-3">
+              {data.map((item, index) => (
+                <Product
+                  key={index}
+                  data={data}
+                  updateCart={updateCart}
+                  item={item}
+                  cart={cart}
+                />
+              ))}
+            </div>
+          </div>
+          <Cart cart={cart} updateCart={updateCart} setOverlay={setOverlay} />
+        </div>
+        <div className="text-center attribution my-10">
+          Challenge by{' '}
+          <a href="https://www.frontendmentor.io?ref=challenge">
+            Frontend Mentor
+          </a>
+          . <br />
+          Coded by{' '}
+          <a href="https://github.com/dirkvankrieken">Dirk van Krieken</a>.
+        </div>
+      </main>
+      {showOverlay}
     </>
   )
 }

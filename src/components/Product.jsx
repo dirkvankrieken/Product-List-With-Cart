@@ -1,24 +1,35 @@
 import Button from './Button'
 
-export default function Product({
-  id,
-  addToCart,
-  data,
-  image,
-  name,
-  category,
-  price,
-}) {
+export default function Product({ updateCart, data, cart, item }) {
+  let productImage
+  if (cart.find((element) => element.name == item.name)) {
+    productImage = (
+      <img
+        className="rounded-xl border-3 border-red md:h-50 object-cover"
+        src={item.image.mobile}
+        alt={`image of ${item.name}`}
+      />
+    )
+  } else {
+    productImage = (
+      <img
+        className="rounded-xl border-3 border-transparent md:h-50 object-cover"
+        src={item.image.mobile}
+        alt={`image of ${item.name}`}
+      />
+    )
+  }
   return (
-    <div>
-      <img src={image.mobile} alt={`image of ${name}`} />
-      <div className="flex flex-col items-center">
-        <Button id={id} addToCart={addToCart} data={data} />
+    <div className="my-2">
+      {productImage}
+      <div className="flex flex-col items-center h-8">
+        <Button updateCart={updateCart} data={data} cart={cart} item={item} />
       </div>
-      <h2 className="text-xl">{name}</h2>
-      {category}
-      <br />
-      <span className="">{price}</span>
+      <span className="text-sm text-rose-500">{item.category}</span>
+      <h2 className="text-md font-medium">{item.name}</h2>
+      <span className="text-text-color font-medium">
+        ${item.price.toFixed(2)}
+      </span>
     </div>
   )
 }
