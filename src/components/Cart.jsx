@@ -28,7 +28,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
       <>
         <img
           className="m-auto my-5"
-          src="./images/illustration-empty-cart.svg"
+          src="/images/illustration-empty-cart.svg"
           alt="illustration of an empty cart"
         />
         <p className="text-sm my-5 text-center font-medium text-rose-500">
@@ -57,7 +57,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
               <img
                 className="border-2 border-icon-remove rounded-full p-0.5 w-5 h-5 self-center"
                 onClick={() => removeItem(item)}
-                src="./images/icon-remove-item.svg"
+                src="/images/icon-remove-item.svg"
               />
             </div>
             <hr className="border-rose-100" />
@@ -70,7 +70,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
           </span>
         </div>
         <div className="flex gap-3 py-3 my-5 px-5 rounded-lg bg-background">
-          <img src="./images/icon-carbon-neutral.svg" />
+          <img src="/images/icon-carbon-neutral.svg" />
           <p>
             This is a <span className="font-medium">carbon-neutral</span>{' '}
             delivery

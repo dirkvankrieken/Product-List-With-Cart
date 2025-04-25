@@ -10,7 +10,7 @@ function App() {
   const [overlay, setOverlay] = useState(false)
   let showOverlay
   const getData = () => {
-    fetch('data.json', {
+    fetch('/data.json', {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
