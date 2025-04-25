@@ -19,7 +19,6 @@ export default function Cart({ cart, updateCart, setOverlay }) {
     }
   }
   function confirmClicked() {
-    console.log('Confirm clicked')
     setOverlay(true)
   }
   const cartAmmount = calculateCartAmmount()
@@ -87,8 +86,8 @@ export default function Cart({ cart, updateCart, setOverlay }) {
     )
   }
   return (
-    <div className="bg-white p-5 my-5 rounded-lg md:w-100">
-      <h2 className="text-2xl font-semibold text-text-color md:text-sm md:font-bold">
+    <div className="bg-white p-5 my-5 rounded-lg lg:w-100">
+      <h2 className="text-2xl font-semibold text-text-color lg:text-sm lg:font-bold">
         Your Cart ({cartAmmount})
       </h2>
       {cartContent}

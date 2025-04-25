@@ -5,16 +5,20 @@ export default function Product({ updateCart, data, cart, item }) {
   if (cart.find((element) => element.name == item.name)) {
     productImage = (
       <img
-        className="rounded-xl border-3 border-red md:h-50 object-cover"
-        src={item.image.mobile}
+        className="w-full rounded-xl border-3 border-red md:h-50 object-cover"
+        srcSet={`${item.image.mobile} 640w, ${item.image.tablet} 768w, ${item.image.desktop} 1280w`}
+        size="100vw"
+        src={item.image.desktop}
         alt={`image of ${item.name}`}
       />
     )
   } else {
     productImage = (
       <img
-        className="rounded-xl border-3 border-transparent md:h-50 object-cover"
-        src={item.image.mobile}
+        className="w-full rounded-xl border-3 border-transparent md:h-50 object-cover"
+        srcSet={`${item.image.mobile} 640w, ${item.image.tablet} 768w, ${item.image.desktop} 1280w`}
+        size="100vw"
+        src={item.image.desktop}
         alt={`image of ${item.name}`}
       />
     )
