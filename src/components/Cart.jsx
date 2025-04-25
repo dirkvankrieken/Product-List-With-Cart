@@ -28,7 +28,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
       <>
         <img
           className="m-auto my-5"
-          src="/images/illustration-empty-cart.svg"
+          src="images/illustration-empty-cart.svg"
           alt="illustration of an empty cart"
         />
         <p className="text-sm my-5 text-center font-medium text-rose-500">
