@@ -70,7 +70,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
           </span>
         </div>
         <div className="flex gap-3 py-3 my-5 px-5 rounded-lg bg-background">
-          <img src="/images/icon-carbon-neutral.svg" />
+          <img src="images/icon-carbon-neutral.svg" />
           <p>
             This is a <span className="font-medium">carbon-neutral</span>{' '}
             delivery

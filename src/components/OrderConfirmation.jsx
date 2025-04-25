@@ -11,7 +11,7 @@ export default function OrderConfirmation({ cart, updateCart, setOverlay }) {
   return (
     <div className="fixed inset-0 bg-black/50 z-50 md:flex md:flex-row md:justify-center md:items-center">
       <div className="bg-white fixed bottom-0 p-6 rounded-t-xl w-full max-h-screen overflow-y-auto md:max-w-130 md:bottom-auto">
-        <img className="my-5" src="/images/icon-order-confirmed.svg" />
+        <img className="my-5" src="images/icon-order-confirmed.svg" />
         <h2 className="text-4xl font-bold">Order Confirmed</h2>
         <span className="text-rose-500 text-base/10">
           We hope you enjoy your food!
