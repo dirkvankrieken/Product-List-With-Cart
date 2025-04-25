@@ -57,7 +57,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
               <img
                 className="border-2 border-icon-remove rounded-full p-0.5 w-5 h-5 self-center"
                 onClick={() => removeItem(item)}
-                src="/images/icon-remove-item.svg"
+                src="images/icon-remove-item.svg"
               />
             </div>
             <hr className="border-rose-100" />
