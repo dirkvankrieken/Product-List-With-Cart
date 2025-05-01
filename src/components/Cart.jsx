@@ -45,7 +45,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
               <div className="text-sm">
                 <h2 className="font-medium my-2">{item.name}</h2>
                 <span className="font-medium text-text-color">
-                  {item.quantity}
+                  {item.quantity}x
                 </span>
                 <span className="text-rose-500 mx-3">
                   @ $ {item.price.toFixed(2)}
@@ -87,7 +87,7 @@ export default function Cart({ cart, updateCart, setOverlay }) {
   }
   return (
     <div className="bg-white p-5 my-5 rounded-lg lg:w-100">
-      <h2 className="text-2xl font-semibold text-text-color lg:text-sm lg:font-bold">
+      <h2 className="text-2xl font-bold text-text-color lg:text-sm lg:font-bold">
         Your Cart ({cartAmmount})
       </h2>
       {cartContent}
