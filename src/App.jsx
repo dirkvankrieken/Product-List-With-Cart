@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <main className="p-5 max-w-270 mx-auto">
-        <div className="flex flex-col lg:flex-row md:justify-between">
+        <div className="flex flex-col gap-5 lg:flex-row md:justify-between">
           <div>
             <h1 className="text-4xl font-bold pb-10 md:pb-5">Desserts</h1>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
