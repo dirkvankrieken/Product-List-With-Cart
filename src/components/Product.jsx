@@ -24,7 +24,7 @@ export default function Product({ updateCart, data, cart, item }) {
     )
   }
   return (
-    <div className="my-2">
+    <div>
       {productImage}
       <div className="flex flex-col items-center h-8">
         <Button updateCart={updateCart} data={data} cart={cart} item={item} />
